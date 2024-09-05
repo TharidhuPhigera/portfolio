@@ -7,6 +7,15 @@ import Lottie from "react-lottie";
 import animationData from '@/data/confetti.json'
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import { InfiniteMovingCards } from "./InfiniteMovingCards";
+
+const row1 = ["Java", "Python", "Javascript", "Typescript", "PHP", "C++"];
+const row2 = ["ReactJS", "NextJS", "TailwindCSS", "HTML/CSS"];
+const row3 = ["NodeJS", "SpringMVC", "Flask", "Django"];
+const row4 = ["MySQL", "MongoDB", "Docker", "AWS"];
+
+
+
 
 export const BentoGrid = ({
   className,
@@ -46,8 +55,7 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+
 
   const [copied, setCopied] = useState(false);
 
@@ -118,34 +126,33 @@ export const BentoGridItem = ({
           {id === 2 && <GlobeDemo />}
 
           {/* Tech stack list div */}
-          {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#228B22]"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-              </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#228B22]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
+          {id === 1 && (
+          <div className="h-[40vh] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+            <InfiniteMovingCards
+              items={row1}
+              direction="right"
+              speed="slow"
+              backgroundColor="#50B498"
+            />
+            <InfiniteMovingCards
+              items={row2}
+              direction="left"
+              speed="slow"
+              backgroundColor="#3CB371"
+            />
+            <InfiniteMovingCards
+              items={row3}
+              direction="right"
+              speed="slow"
+              backgroundColor="#9CDBA6"
+            />
+            <InfiniteMovingCards
+              items={row4}
+              direction="left"
+              speed="slow"
+              backgroundColor="#228B22"
+            />
+          </div>
           )}
         </div>
       </div>

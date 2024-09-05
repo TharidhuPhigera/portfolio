@@ -23,14 +23,13 @@ const RecentProjects = () => {
                 <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                   <div
                     className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                    style={{ backgroundColor: "#13162D" }}
                   >
                     <img src="/bg.png" alt="bgimg" />
                   </div>
                   <img
                     src={item.img}
                     alt="cover"
-                    className="z-10 absolute bottom-0"
+                    className="z-10 absolute bottom-0 w-[250px] h-[250px]"
                   />
                 </div>
   
@@ -41,7 +40,7 @@ const RecentProjects = () => {
                 <p
                   className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
                   style={{
-                    color: "#BEC1DD",
+                    color: "#D3F4D3",
                     margin: "1vh 0",
                   }}
                 >
@@ -74,6 +73,7 @@ const RecentProjects = () => {
             </div>
           ))}
         </div>
+          
       </div>
     );
   };
