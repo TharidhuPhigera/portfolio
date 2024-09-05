@@ -14,7 +14,8 @@ const Footer = () => {
         <p className="text-[#D3F4D3] md:mt-10 my-5 text-center">
         Let’s connect and explore how we can achieve your goals together.
         </p>
-        <a href="mailto:tharidhuphigera@gmail.com">
+        <a 
+        href="mailto:tharidhuphigera@gmail.com">
           <MagicButton
             title="Let's get in touch"
             icon={<FaEnvelope />}
