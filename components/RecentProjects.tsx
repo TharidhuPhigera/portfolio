@@ -1,6 +1,5 @@
 import { projects } from '@/data'
 import React from 'react'
-import { FaLocationArrow } from 'react-icons/fa';
 import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
@@ -17,8 +16,13 @@ const RecentProjects = () => {
               key={item.id}
             >
               <PinContainer
-                title={item.link}
+                title={item.title}
                 href={item.link}
+              >
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                   <div
@@ -63,12 +67,9 @@ const RecentProjects = () => {
                   </div>
   
                   <div className="flex justify-center items-center">
-                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                      Check Live Site
-                    </p>
-                    <FaLocationArrow className="ms-3" color="#CBACF9" />
                   </div>
                 </div>
+                </a>
               </PinContainer>
             </div>
           ))}
