@@ -24,7 +24,7 @@ const Hero = () => {
                 words='Welcome! I’m Tharidhu'
                 />
                 <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>A Software Developer based in Milan, Italy</p>
-                <a href="">
+                <a href="/resume.pdf" download="Tharidhu's_Resume.pdf">
                 <MagicButton
                     title="Resume"
                     icon={<FaDownload />}
