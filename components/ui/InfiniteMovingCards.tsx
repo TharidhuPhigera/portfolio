@@ -20,57 +20,47 @@ export const InfiniteMovingCards = ({
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const [start, setStart] = useState(false);
+  
+  // Duplicate the items until the row is filled
+  const duplicateItems = (items: string[]) => {
+    const itemWidth = 150; // Adjust this based on your item's width (you can make this dynamic)
+    const containerWidth = containerRef.current?.offsetWidth || 0;
+    const itemsNeeded = Math.ceil(containerWidth / itemWidth);
+    const totalItems = [...items];
+
+    // Duplicate the items until the number matches the required number to fill the container
+    while (totalItems.length < itemsNeeded * 2) { 
+      totalItems.push(...items); 
+    }
+    
+    return totalItems;
+  };
 
   useEffect(() => {
-    addAnimation();
-  }, []);
-
-  const [start, setStart] = useState(false);
-
-  function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
-
       getDirection();
       getSpeed();
       setStart(true);
     }
-  }
+  }, [items]);
 
   const getDirection = () => {
     if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "forwards"
-        );
-      } else {
-        containerRef.current.style.setProperty(
-          "--animation-direction",
-          "reverse"
-        );
-      }
+      const animationDirection = direction === "left" ? "forwards" : "reverse";
+      containerRef.current.style.setProperty("--animation-direction", animationDirection);
     }
   };
 
   const getSpeed = () => {
     if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
+      const animationDuration =
+        speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s";
+      containerRef.current.style.setProperty("--animation-duration", animationDuration);
     }
   };
+
+  const duplicatedItems = duplicateItems(items); // Duplicate the items programmatically
 
   return (
     <div
@@ -88,16 +78,16 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {duplicatedItems.map((item, idx) => (
           <li
             className="w-[100px] max-w-full relative flex-shrink-0 flex items-center justify-center px-4 py-2 md:w-[150px] bg-gray-800 rounded-lg shadow-[inset_4px_4px_10px_rgba(0,0,0,0.6),inset_-4px_-4px_10px_rgba(255,255,255,0.1)]"
             style={{
               background: backgroundColor,
             }}
-            key={idx} 
+            key={idx}
           >
             <span className="text-sm leading-[1.6] text-center text-black font-semibold">
-              {item} 
+              {item}
             </span>
           </li>
         ))}

@@ -11,7 +11,7 @@ const Footer = () => {
         <h1 className="heading lg:max-w-[45vw]">
           Ready to <span className="text-gradient">elevate</span> your digital presence?
         </h1>
-        <p className="text-[#D3F4D3] md:mt-10 my-5 text-center">
+        <p className="text-[#B3E5FC] md:mt-10 my-5 text-center">
         Let’s connect and explore how we can achieve your goals together.
         </p>
         <a 

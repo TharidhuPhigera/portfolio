@@ -53,7 +53,7 @@ export const navItems = [
       des: "Stock information platform providing real-time data and historical analysis with recommendations for optimal trading times.",
       img: "/calzone.svg",
       iconLists: ["/next.svg", "/tail.svg", "/js.svg", "/py.svg", "/tensor.svg", "/mongo.svg"],
-      link: "",
+      link: "https://github.com/TharidhuPhigera/CalzoneCapital",
     },
     {
       id: 2,
@@ -71,6 +71,14 @@ export const navItems = [
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/mongo.svg"],
       link: "https://cargo-tracker-eight.vercel.app/",
     },
+    // {
+    //   id: 5,
+    //   title: "7azy7rades",
+    //   des: "Manage and track your shipments, request quotes, and access comprehensive cargo information with VCS.",
+    //   img: "/vcs.svg",
+    //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/mongo.svg"],
+    //   link: "https://cargo-tracker-eight.vercel.app/",
+    // },
   ];
   
   

@@ -10,8 +10,8 @@ const Hero = () => {
     <div className='pb-20 pt-36'>
         <div>
         <Spotlight className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen' fill='white' />  
-        <Spotlight className='top-10 left-full h-[80vh] w-[50vh]' fill='#3CB371' />  
-        <Spotlight className='top-28 left-80 h-[80vh] w-[50vh]' fill='#228B22' /> 
+        <Spotlight className='top-10 left-full h-[80vh] w-[50vh]' fill='#80DEEA' />  {/* Light blue */}
+        <Spotlight className='top-28 left-80 h-[80vh] w-[50vh]' fill='#29B6F6' />  {/* Deeper blue */}
         </div>
 
         <div className='flex justify-center relative my-20 z-10'>

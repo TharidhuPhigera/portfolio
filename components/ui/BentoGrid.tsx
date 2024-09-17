@@ -73,15 +73,15 @@ export const BentoGridItem = ({
     setCopied(true);
   }
   return (
-    <div
-      className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
-        className
-      )}
-      style={{
-        background: "#171717",
-      }}
-    >
+      <div
+        className={cn(
+          "row-span-1 relative overflow-hidden rounded-3xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+          className
+        )}
+        style={{
+          background: "#171717",
+        }}
+      >
       {/* add img divs */}
       <div className={`${id === 4 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
@@ -128,30 +128,33 @@ export const BentoGridItem = ({
           {/* Tech stack list div */}
           {id === 1 && (
           <div className="h-[40vh] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
-            <InfiniteMovingCards
-              items={row1}
-              direction="right"
-              speed="slow"
-              backgroundColor="#50B498"
-            />
-            <InfiniteMovingCards
-              items={row2}
-              direction="left"
-              speed="slow"
-              backgroundColor="#3CB371"
-            />
-            <InfiniteMovingCards
-              items={row3}
-              direction="right"
-              speed="slow"
-              backgroundColor="#9CDBA6"
-            />
-            <InfiniteMovingCards
-              items={row4}
-              direction="left"
-              speed="slow"
-              backgroundColor="#228B22"
-            />
+          <InfiniteMovingCards
+            items={row1}
+            direction="right"
+            speed="slow"
+            backgroundColor="#80DEEA"  // Light blue
+          />
+
+          <InfiniteMovingCards
+            items={row2}
+            direction="left"
+            speed="normal"
+            backgroundColor="#E0F7FA"  // Light blue
+          />
+
+          <InfiniteMovingCards
+            items={row3}
+            direction="right"
+            speed="normal"
+            backgroundColor="#29B6F6"  // Deeper blue
+          />
+
+          <InfiniteMovingCards
+            items={row4}
+            direction="left"
+            speed="slow"
+            backgroundColor="#B3E5FC"  // Very light blue
+          />
           </div>
           )}
         </div>
